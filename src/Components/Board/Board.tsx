@@ -13,18 +13,20 @@ interface IBoardProps {
   primaryColor: string;
   secondaryColor: string;
 }
-
 const BoardStyled = styled.section<IBoardProps>`
   background-color: ${(props) => props.secondaryColor};
   text-align: center;
-  padding: 10px;
+  padding: 40px;
 `;
 const BarraStyled = styled.div<IBoardProps>`
   width: 32px;
   height: 4px;
   background: ${(props) => props.primaryColor};
-  margin-top: 14px;
-  margin: auto;
+  margin: 12px auto;
+`;
+const DivCardStyled = styled.div`
+  display: flex;
+  gap: 24px;
 `;
 export default function Board({
   team,
@@ -32,6 +34,7 @@ export default function Board({
   secondaryColor,
   cards,
 }: IBoard) {
+  console.log("cards", cards);
   return (
     <BoardStyled secondaryColor={secondaryColor} primaryColor={primaryColor}>
       <Typography variant="h1">{team}</Typography>
@@ -39,19 +42,20 @@ export default function Board({
         secondaryColor={secondaryColor}
         primaryColor={primaryColor}
       />
-      <div>
+      <DivCardStyled>
         {cards
           .filter((card) => card.team === team)
-          .map((card) => (
+          .map((card, index) => (
             <Card
+              key={index}
               image={card.image}
               name={card.name}
               position={card.position}
               team={card.team}
-              primaryColor={card.primaryColor}
+              primaryColor={primaryColor}
             />
           ))}
-      </div>
+      </DivCardStyled>
     </BoardStyled>
   );
 }

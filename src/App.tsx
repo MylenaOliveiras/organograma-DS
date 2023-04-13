@@ -1,15 +1,15 @@
 import Board from "./Components/Board/Board";
 import Forms from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
-import Section from "./Components/Section/Section";
 import styled from "styled-components";
 import { ICards } from "./Components/Card/Card";
 import { useState } from "react";
+import Footer from "./Components/Footer/Footer";
 
 const teams = [
   {
-    value: "Back-End",
-    label: "Back-End",
+    value: "Programação",
+    label: "Programação",
     primaryColor: "#57C278",
     secondaryColor: "#00C86F26",
   },
@@ -62,14 +62,16 @@ export default function App() {
     <div className="App">
       <Header />
       <Forms teams={teams} cardRegistered={(card) => addCard(card)} />
-      {teams.map((team) => (
+      {teams.map((team, index) => (
         <Board
+          key={index}
           cards={cards}
           team={team.value}
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
         />
       ))}
+      <Footer />
     </div>
   );
 }

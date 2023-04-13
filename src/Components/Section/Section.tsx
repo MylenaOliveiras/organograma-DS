@@ -6,24 +6,26 @@ const TypographyStyled = styled(Typography)`
   color: #6278f7;
   font-family: "Prata";
   font-weight: 400;
-  font-size: 40px;
+  font-size: 36px;
   line-height: 72px;
 `;
 const IconStyled = styled(Icon)`
   border-radius: 50%;
   stroke: white;
-  width: 80px;
-  height: 80px;
-  padding-right: 2px;
+  width: 90px;
+  height: 90px;
+  margin: -10px -16px;
 `;
 const ButtonStyled = styled.button`
-  border-radius: 50%;
   background-color: #6278f7;
+  border-radius: 50%;
   border: none;
-  height: 90px;
   margin-right: 145px;
   margin-top: -80px;
   cursor: pointer;
+  @media (max-width: 870px) {
+    margin-top: 20px;
+  }
 `;
 const SectionStyled = styled.section`
   padding: 80px 0;

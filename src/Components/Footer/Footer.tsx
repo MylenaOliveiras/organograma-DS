@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export default function Header() {
+export default function Footer() {
   const ImgStyled = styled.img`
     width: 100%;
   `;
+
   return (
-    <header>
-      <ImgStyled src="./imagens/header.svg" />
-    </header>
+    <footer>
+      <ImgStyled src="./imagens/Rodapé.svg" />
+    </footer>
   );
 }
