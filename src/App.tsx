@@ -3,6 +3,8 @@ import Forms from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
 import Section from "./Components/Section/Section";
 import styled from "styled-components";
+import { ICards } from "./Components/Card/Card";
+import { useState } from "react";
 
 const teams = [
   {
@@ -49,12 +51,20 @@ const teams = [
   },
 ];
 export default function App() {
+  const [cards, setCards] = useState<ICards[]>([]);
+
+  const addCard = (card: ICards) => {
+    setCards([...cards, card]);
+    console.log(card);
+  };
+
   return (
     <div className="App">
       <Header />
-      <Forms teams={teams} />
+      <Forms teams={teams} cardRegistered={(card) => addCard(card)} />
       {teams.map((team) => (
         <Board
+          cards={cards}
           team={team.value}
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
