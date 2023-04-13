@@ -53,7 +53,7 @@ function Forms({ teams, cardRegistered }: IForm) {
     <>
       {!showForm && (
         <FormWithMethods methods={metodos} as={Form} onSubmit={onSubmit}>
-          <Typography color="brand02" variant="h1">
+          <Typography variant="h1">
             Preencha os dados para criar o card do colaborador.
           </Typography>
           <TextField name="name" label="Nome" required />
