@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { ICards } from "../../types/Types";
+import { ICards } from "./types";
 import { CardStyled, IconStyled, HeaderStyled } from "./styled";
 
 export default function ({ name, position, image, primaryColor }: ICards) {

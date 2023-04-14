@@ -7,7 +7,7 @@ import {
   IconStyled,
   MainStyled,
 } from "./styled";
-import { ISection } from "../../types/Types";
+import { ISection } from "./types";
 
 export default function Section({ onClick }: ISection) {
   return (

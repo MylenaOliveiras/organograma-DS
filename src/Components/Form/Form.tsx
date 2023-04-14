@@ -11,7 +11,7 @@ import { Typography } from "@mui/material";
 import { Form } from "./styled";
 import Section from "../Section/Section";
 import { useEffect, useState } from "react";
-import { IForm } from "../../types/Types";
+import { IForm } from "./types";
 
 function Forms({ teams, cardRegistered }: IForm) {
   const metodos = useMethods();
