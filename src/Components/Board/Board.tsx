@@ -1,18 +1,8 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
-import Card, { ICards } from "../Card/Card";
+import { IBoard, IBoardProps } from "../../types/Types";
+import Card from "../Card/Card";
 
-export interface IBoard {
-  cards: ICards[];
-  team: string;
-  primaryColor: string;
-  secondaryColor: string;
-}
-
-interface IBoardProps {
-  primaryColor: string;
-  secondaryColor: string;
-}
 const BoardStyled = styled.section<IBoardProps>`
   background-color: ${(props) => props.secondaryColor};
   text-align: center;

@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
+import { ICards, ICardsProps } from "../../types/Types";
 
 const HeaderStyled = styled.header<ICardsProps>`
   height: 91px;
@@ -21,18 +22,6 @@ const IconStyled = styled.img`
   border-radius: 50%;
   margin: auto;
 `;
-
-export interface ICards {
-  name: string;
-  position: string;
-  image: string;
-  team: string;
-  primaryColor: string;
-}
-
-interface ICardsProps {
-  primaryColor: string;
-}
 
 export default function ({ name, position, image, primaryColor }: ICards) {
   return (

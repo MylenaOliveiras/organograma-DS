@@ -13,7 +13,7 @@ import { Typography } from "@mui/material";
 import styled from "styled-components";
 import Section from "../Section/Section";
 import { useEffect, useState } from "react";
-import { ICards } from "../Card/Card";
+import { ICards, IForm } from "../../types/Types";
 
 const Form = styled.form`
   background-color: #f6f6f6;
@@ -27,11 +27,6 @@ const Form = styled.form`
   flex-direction: column;
   gap: ${Theme.spacing(8)};
 `;
-
-export interface IForm {
-  teams: { label: string }[];
-  cardRegistered: (card: ICards) => void;
-}
 
 function Forms({ teams, cardRegistered }: IForm) {
   const metodos = useMethods();

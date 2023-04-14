@@ -1,6 +1,7 @@
 import { Icon } from "@brpartners/core";
 import { Typography } from "@mui/material";
 import styled from "styled-components";
+import { ISection } from "../../types/Types";
 
 const TypographyStyled = styled(Typography)`
   color: #6278f7;
@@ -45,9 +46,6 @@ const MainStyled = styled.main`
   text-align: center;
 `;
 
-export interface ISection {
-  onClick: () => void;
-}
 export default function Section({ onClick }: ISection) {
   return (
     <SectionStyled>

@@ -2,7 +2,7 @@ import Board from "./Components/Board/Board";
 import Forms from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
 import styled from "styled-components";
-import { ICards } from "./Components/Card/Card";
+import { ICards } from "./types/Types";
 import { useState } from "react";
 import Footer from "./Components/Footer/Footer";
 
