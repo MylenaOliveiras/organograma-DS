@@ -1,32 +1,17 @@
 import {
-  ContainedButton,
   FormWithMethods,
   TextField,
   Select,
   useMethods,
   NextButton,
   resetIsSubmitted,
-  Theme,
   makeSelectOptions,
 } from "@brpartners/core";
 import { Typography } from "@mui/material";
-import styled from "styled-components";
+import { Form } from "./styled";
 import Section from "../Section/Section";
 import { useEffect, useState } from "react";
-import { ICards, IForm } from "../../types/Types";
-
-const Form = styled.form`
-  background-color: #f6f6f6;
-  max-width: 1024px;
-  padding: 36px 64px;
-  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
-  border-radius: 24px;
-  margin: auto;
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: ${Theme.spacing(8)};
-`;
+import { IForm } from "../../types/Types";
 
 function Forms({ teams, cardRegistered }: IForm) {
   const metodos = useMethods();

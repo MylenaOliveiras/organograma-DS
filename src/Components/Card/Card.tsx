@@ -1,27 +1,6 @@
 import { Typography } from "@mui/material";
-import styled from "styled-components";
-import { ICards, ICardsProps } from "../../types/Types";
-
-const HeaderStyled = styled.header<ICardsProps>`
-  height: 91px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-  margin-bottom: -56px;
-  background-color: ${(props) => props.primaryColor};
-`;
-const CardStyled = styled.div`
-  width: 262px;
-  background-color: white;
-  border-radius: 12px;
-  min-width: min-content;
-  padding-bottom: 16px;
-  margin: 40px 0;
-`;
-const IconStyled = styled.img`
-  width: 120px;
-  border-radius: 50%;
-  margin: auto;
-`;
+import { ICards } from "../../types/Types";
+import { CardStyled, IconStyled, HeaderStyled } from "./styled";
 
 export default function ({ name, position, image, primaryColor }: ICards) {
   return (
