@@ -1,4 +1,4 @@
-import { ICardsProps } from "../../types/Types";
+import { ICardsProps } from "./types";
 import styled from "styled-components";
 export const HeaderStyled = styled.header<ICardsProps>`
   height: 91px;
@@ -13,7 +13,6 @@ export const CardStyled = styled.div`
   border-radius: 12px;
   min-width: min-content;
   padding-bottom: 16px;
-  margin: 40px 0;
 `;
 export const IconStyled = styled.img`
   width: 120px;

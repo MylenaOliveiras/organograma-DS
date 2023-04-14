@@ -2,7 +2,7 @@ import Board from "./Components/Board/Board";
 import Forms from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
 import styled from "styled-components";
-import { ICards } from "./types/Types";
+import { ICards } from "./Components/Card/types";
 import { useState } from "react";
 import Footer from "./Components/Footer/Footer";
 
@@ -44,7 +44,6 @@ export default function App() {
 
   const addCard = (card: ICards) => {
     setCards([...cards, card]);
-    console.log(card);
   };
 
   return (

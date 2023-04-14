@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { BoardStyled, DivCardStyled, BarraStyled } from "./styled";
-import { IBoard } from "../../types/Types";
+import { IBoard } from "./types";
 import Card from "../Card/Card";
 
 export default function Board({
@@ -9,7 +9,6 @@ export default function Board({
   secondaryColor,
   cards,
 }: IBoard) {
-  console.log("cards", cards);
   return (
     <BoardStyled secondaryColor={secondaryColor} primaryColor={primaryColor}>
       <Typography variant="h1">{team}</Typography>

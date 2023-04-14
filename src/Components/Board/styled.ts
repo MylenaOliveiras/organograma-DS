@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IBoardProps } from "../../types/Types";
+import { IBoardProps } from "./types";
 
 export const BoardStyled = styled.section<IBoardProps>`
   background-color: ${(props) => props.secondaryColor};
