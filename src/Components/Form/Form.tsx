@@ -7,6 +7,7 @@ import {
   NextButton,
   resetIsSubmitted,
   Theme,
+  makeSelectOptions,
 } from "@brpartners/core";
 import { Typography } from "@mui/material";
 import styled from "styled-components";
@@ -28,7 +29,7 @@ const Form = styled.form`
 `;
 
 export interface IForm {
-  teams: { value: string; label: string }[];
+  teams: { label: string }[];
   cardRegistered: (card: ICards) => void;
 }
 
@@ -59,7 +60,11 @@ function Forms({ teams, cardRegistered }: IForm) {
           <TextField name="name" label="Nome" required />
           <TextField name="position" label="Cargo" required />
           <TextField name="image" label="Imagem" required />
-          <Select name="team" label="Time" options={teams} />
+          <Select
+            name="team"
+            label="Time"
+            options={makeSelectOptions(teams.map((t) => t.label))}
+          />
           <NextButton icon={false} color="secondary">
             Criar card
           </NextButton>
