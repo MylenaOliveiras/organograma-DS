@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
-import { ICards } from "./types";
+import { ICard } from "./types";
 import { CardStyled, IconStyled, HeaderStyled } from "./styled";
 
-export default function ({ name, position, image, primaryColor }: ICards) {
+export default function ({ name, position, image, primaryColor }: ICard) {
   return (
     <CardStyled>
       <HeaderStyled primaryColor={primaryColor}></HeaderStyled>

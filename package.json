@@ -11,16 +11,18 @@
   "dependencies": {
     "@brpartners/core": "83.14.1",
     "@mui/material": "5.8.5",
+    "@tanstack/react-query": "4.29.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-query": "^3.39.3",
     "styled-components": "5.3.5"
-
   },
   "devDependencies": {
     "@types/react": "17.0.47",
     "@types/react-dom": "17.0.17",
     "@types/styled-components": "5.1.25",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "msw": "1.2.1",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   },
@@ -28,5 +30,8 @@
     "overrides": {
       "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     }
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

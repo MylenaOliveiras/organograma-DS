@@ -11,10 +11,10 @@ import { Typography } from "@mui/material";
 import { Form } from "./styled";
 import Section from "../Section/Section";
 import { useEffect, useState } from "react";
-import { IForm } from "./types";
+import { IForm, IFieldValues } from "./types";
 
 function Forms({ teams, cardRegistered }: IForm) {
-  const metodos = useMethods();
+  const metodos = useMethods<IFieldValues>();
   const {
     reset,
     formState: { isSubmitted },
@@ -26,7 +26,7 @@ function Forms({ teams, cardRegistered }: IForm) {
   function visible() {
     setShowForm((showForm) => !showForm);
   }
-  function onSubmit(values: any) {
+  function onSubmit(values: IFieldValues) {
     cardRegistered(values);
     reset();
   }

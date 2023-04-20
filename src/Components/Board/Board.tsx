@@ -21,6 +21,7 @@ export default function Board({
           .filter((card) => card.team === team)
           .map((card, index) => (
             <Card
+              id={card.id}
               key={index}
               image={card.image}
               name={card.name}

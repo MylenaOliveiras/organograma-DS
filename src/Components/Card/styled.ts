@@ -1,6 +1,6 @@
-import { ICardsProps } from "./types";
+import { ICardProps } from "./types";
 import styled from "styled-components";
-export const HeaderStyled = styled.header<ICardsProps>`
+export const HeaderStyled = styled.header<ICardProps>`
   height: 91px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;

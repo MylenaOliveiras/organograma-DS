@@ -1,4 +1,5 @@
-export interface ICards {
+export interface ICard {
+  id: number;
   name: string;
   position: string;
   image: string;
@@ -6,6 +7,6 @@ export interface ICards {
   primaryColor: string;
 }
 
-export interface ICardsProps {
+export interface ICardProps {
   primaryColor: string;
 }

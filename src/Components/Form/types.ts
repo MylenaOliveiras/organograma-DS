@@ -1,5 +1,11 @@
-import { ICards } from "../Card/types";
+import { ICard } from "../Card/types";
 export interface IForm {
   teams: { label: string }[];
-  cardRegistered: (card: ICards) => void;
+  cardRegistered: (card: IFieldValues) => void;
+}
+export interface IFieldValues {
+  name: string;
+  position: string;
+  image: string;
+  team: string;
 }
