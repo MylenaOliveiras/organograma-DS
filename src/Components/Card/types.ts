@@ -1,12 +1,16 @@
-export interface ICard {
-  id: number;
-  name: string;
-  position: string;
-  image: string;
-  team: string;
-  primaryColor: string;
-}
+import { z } from "zod";
+
+export const cardSchema = z.object({
+  id: z.number().optional(),
+  name: z.string(),
+  position: z.string(),
+  image: z.string(),
+  team: z.string(),
+  primaryColor: z.string().optional(),
+});
+
+export type ICard = z.infer<typeof cardSchema>;
 
 export interface ICardProps {
-  primaryColor: string;
+  primaryColor: string | undefined;
 }

@@ -1,13 +1,14 @@
 import Board from "./Components/Board/Board";
 import Forms from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
-import styled from "styled-components";
 import { ICard } from "./Components/Card/types";
-import { useState } from "react";
 import Footer from "./Components/Footer/Footer";
-import { useMutation, useQueries, useQuery, useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 import { TopLoadingBar } from "@brpartners/core";
-import { IFieldValues } from "./Components/Form/types";
+import { getTeam } from "./api";
+import Section from "./Components/Section/Section";
+import ErrorAlert from "./Components/ErrorAlert/ErrorAlert";
+import { useState } from "react";
 
 const teams = [
   {
@@ -37,21 +38,8 @@ const teams = [
     primaryColor: "#FF8A29",
     secondaryColor: "#FF8C2A26",
   },
-];
-
-async function getTeam() {
-  const response = await fetch("/team");
-  const data = await response.json();
-  return data;
-}
-async function postTeam(values: IFieldValues) {
-  const response = await fetch("/team", {
-    method: "POST",
-    body: JSON.stringify(values),
-  });
-  const data = await response.json();
-  return data;
-}
+] as const;
+export type ITeams = typeof teams;
 
 export default function App() {
   const { data, isLoading, isError } = useQuery<ICard[]>({
@@ -59,15 +47,10 @@ export default function App() {
     queryFn: getTeam,
   });
 
-  const queryClient = useQueryClient();
-  const { mutate } = useMutation({ mutationFn: postTeam });
-  const addCard = (card: IFieldValues) => {
-    mutate(card, {
-      onSuccess() {
-        queryClient.invalidateQueries(["team"]);
-      },
-    });
-  };
+  const [showForm, setShowForm] = useState(false);
+  function visible() {
+    setShowForm((showForm) => !showForm);
+  }
 
   if (isLoading) {
     return (
@@ -79,15 +62,15 @@ export default function App() {
     );
   }
   if (isError) {
-    return <h1>Error!</h1>;
+    return <ErrorAlert />;
   }
-
-  console.log(data);
 
   return (
     <div className="App">
       <Header />
-      <Forms teams={teams} cardRegistered={(data) => addCard(data)} />
+
+      {showForm && <Forms teams={teams} />}
+      <Section onClick={visible} />
       {teams.map((team, index) => (
         <Board
           key={index}

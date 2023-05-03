@@ -13,7 +13,7 @@ export class Storage<TData extends { id: number }> {
   add(item: TData) {
     const newItem = {
       ...item,
-      id: Math.max(...this.data.map((o) => o.id)) + 1,
+      id: Math.max(0, ...this.data.map((o) => o.id)) + 1,
     };
     this.data.push(newItem);
     this.save();

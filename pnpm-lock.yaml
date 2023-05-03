@@ -25,6 +25,9 @@ dependencies:
   styled-components:
     specifier: 5.3.5
     version: 5.3.5(react-dom@17.0.2)(react-is@17.0.2)(react@17.0.2)
+  zod:
+    specifier: ^3.21.4
+    version: 3.21.4
 
 devDependencies:
   '@types/react':
@@ -2273,3 +2276,7 @@ packages:
       y18n: 5.0.8
       yargs-parser: 21.1.1
     dev: true
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false

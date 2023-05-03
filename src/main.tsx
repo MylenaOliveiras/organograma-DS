@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ThemeProvider } from "@brpartners/core";
+import { SnackbarContainer, ThemeProvider } from "@brpartners/core";
 import { CssBaseline } from "@mui/material";
 import { worker } from "./mocks/browser";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -14,6 +14,7 @@ ReactDOM.render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <CssBaseline />
+        <SnackbarContainer />
         <App />
       </ThemeProvider>
     </QueryClientProvider>
